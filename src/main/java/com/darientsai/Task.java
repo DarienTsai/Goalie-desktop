@@ -18,7 +18,6 @@ import javafx.scene.text.TextAlignment;
 public class Task extends HBox{
 
   //Fields
-  private int idx;
   private App views;
   private boolean completion;
   private TextField task;
@@ -28,7 +27,6 @@ public class Task extends HBox{
     super(0);
 
     //Fill Fields
-    this.idx = idx;
     this.views = views;
     this.completion = completion;
 

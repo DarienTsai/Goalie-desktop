@@ -11,7 +11,6 @@ public class Goal{
 
   //Fields
   private String type;
-  private String face;
   private String title;
   private ArrayList<String> items;
   private ArrayList<Boolean> completion;
@@ -21,7 +20,6 @@ public class Goal{
   public Goal(){}
   public Goal(Category type){
     this.type = type.name();
-    this.face = type.face();
     this.title = "New Goal";
     this.items = new ArrayList<>();
     this.completion = new ArrayList<>();
@@ -61,7 +59,6 @@ public class Goal{
 
   //Setters
   public void setType(String type){this.type = type;}
-  //public void setFace(String face){this.face = face;}
   public void setTitle(String title){this.title = title;}
   public void setItems(ArrayList<String> items){this.items = items;}
   public void setCompletion(ArrayList<Boolean> completion){this.completion = completion;}
