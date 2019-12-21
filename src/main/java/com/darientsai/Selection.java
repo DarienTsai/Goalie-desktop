@@ -19,6 +19,8 @@ class Selection extends VBox{
   //Fields
   private App parent;
   private int idx;
+  private Selection self;
+  private double xOffset;
 
   //Construct
   public Selection(int idx, App parent, Goal goal, Stage primary){
@@ -27,6 +29,7 @@ class Selection extends VBox{
     //Set fields
     this.parent = parent;
     this.idx = idx;
+    self = this;
     DeleteAlert confirm = new DeleteAlert(this, primary, parent.getSounds(), parent.getModel());
     
     //Layout
@@ -50,6 +53,7 @@ class Selection extends VBox{
     this.setPrefSize(130, 130);
     this.getStyleClass().add("selection");
 
+    //Select and Delete
     this.setOnMouseClicked(new EventHandler<MouseEvent>(){
       @Override
       public void handle(MouseEvent event){
@@ -62,6 +66,37 @@ class Selection extends VBox{
       }
     });
 
+    //Drag
+    this.setOnMousePressed(new EventHandler<MouseEvent>(){
+      @Override
+      public void handle(MouseEvent event){
+        if(event.getButton() == MouseButton.SECONDARY){
+          parent.getSounds().deletePrompt.stop();
+          parent.getSounds().deletePrompt.play();
+          confirm.show();
+          event.consume();
+        }
+        xOffset = event.getSceneX();
+      }
+    });
+
+    this.setOnMouseDragged(new EventHandler<MouseEvent>() {
+      @Override
+      public void handle(MouseEvent event){
+        if(event.getSceneX() > 70 && event.getSceneX() < 900){
+          self.setTranslateX(event.getSceneX() - xOffset);
+        }
+      }
+    });
+
+    this.setOnMouseReleased(new EventHandler<MouseEvent>() {
+      @Override
+      public void handle(MouseEvent event){
+        self.setTranslateX(0);
+        parent.getModel().prioritize(idx, (int)(event.getSceneX() - xOffset)/140);
+      }
+    });
+
     // Hover sounds
     this.setOnMouseEntered(new EventHandler<MouseEvent>(){
       @Override
@@ -71,15 +106,6 @@ class Selection extends VBox{
       }
     });
 
-    // Delete
-    this.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>(){
-      @Override
-      public void handle(ContextMenuEvent event){
-        parent.getSounds().deletePrompt.stop();
-        parent.getSounds().deletePrompt.play();
-        confirm.show();
-      }
-    });
   }
 
   //Delete a goal

@@ -106,8 +106,19 @@ public class Model{
   }
 
   //Swap goals
-  public void priotitize(int src, int idx){
-    this.goals.add(idx, this.goals.remove(src));
+  public void prioritize(int src, int offset){
+    int reposit = src - offset;
+    if(reposit < 0){
+      reposit = 0;
+    }
+    else if(reposit >= this.goals.size()){
+      reposit = this.goals.size() - 1;
+    }
+    this.goals.add(reposit, this.goals.remove(src));
+    int currentIdx = reposit;
+    views.reloadGoals(this.goals);
+    this.setCurrent(currentIdx);
+    views.load(currentIdx);
   }
 
   //Generate state string

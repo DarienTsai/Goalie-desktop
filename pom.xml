@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.darientsai</groupId>
-  <artifactId>goalie</artifactId>
+  <artifactId>Goalie-desktop</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>goalie</name>
+  <name>Goalie-desktop</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

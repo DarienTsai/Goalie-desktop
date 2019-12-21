@@ -356,8 +356,6 @@ public class App extends Application {
             }
         });
 
-        // End Splash
-
         // Render
         primary.setWidth(900);
         primary.setHeight(550);
