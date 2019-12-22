@@ -92,6 +92,7 @@ class Selection extends VBox{
       @Override
       public void handle(MouseEvent event){
         self.setTranslateX(0);
+        parent.getModel().write(0);
         parent.getModel().prioritize(idx, (int)(event.getSceneX() - xOffset)/140);
       }
     });
