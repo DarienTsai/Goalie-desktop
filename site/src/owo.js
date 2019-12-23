@@ -35,7 +35,7 @@ let lang = [
 ['Hit youw goaws', 'Hit your goals'],
 ['Get goawie', 'Get Goalie'],
 ['Windows Downwoad', 'Windows Download'],
-['A toow fow goaw setting and goaw gwettin', 'Windows downwoad', 'Windows Download'],
+['A toow fow goaw setting and goaw gwettin', 'A tool for goal setting and goal getting'],
 ['So fwesh!', 'So fresh!'],
 ['So cwean!', 'So clean!'],
 ['Featuwes:', 'Features:'],
