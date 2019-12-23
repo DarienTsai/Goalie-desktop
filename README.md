@@ -20,4 +20,10 @@ Java, CSS, JSON
 Build Automation: Apache Maven
 
 ---
+### Site built with:
+HTML, CSS, JS
+
+[Engwish to OWO Translator](https://lingojam.com/EngwishtoOwOtwanswatow)
+
+---
 Coded with 💖
