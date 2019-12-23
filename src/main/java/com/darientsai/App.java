@@ -69,7 +69,7 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage primary) {
+    public void start(Stage primary) throws URISyntaxException {
         // Splash
         this.splash = new Splash();
 
@@ -80,28 +80,26 @@ public class App extends Application {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setSerializationInclusion(Include.NON_NULL);
         try {
-            URL statePath = new URL(getClass().getResource("/data/state.csv").toExternalForm());
-            this.state = new File(statePath.toURI());
+            // URL statePath = new
+            // URL(getClass().getResource("/data/state.csv").toExternalForm());
+            // this.state = new File(statePath.toURI());
+            this.state = new File("data/state.csv");
             BufferedReader reader = new BufferedReader(new FileReader(state));
             int current = Integer.parseInt(reader.readLine().split(",")[0]);
             boolean audio = Boolean.parseBoolean(reader.readLine().split(",")[0]);
             boolean theme = Boolean.parseBoolean(reader.readLine().split(",")[0]);
             this.model = new Model(current, audio, theme, this);
             reader.close();
-            URL data = new URL(getClass().getResource("/data/data.json").toExternalForm());
-            List<Goal> goals = mapper.reader().forType(new TypeReference<List<Goal>>() {}).readValue(data);
-            this.model.setGoals((ArrayList<Goal>)goals);
-        } 
-        catch (JsonParseException e) {
+            // URL data = new URL(getClass().getResource("/data/data.json").toExternalForm());
+            File data = new File("data/data.json");
+            List<Goal> goals = mapper.reader().forType(new TypeReference<List<Goal>>() {
+            }).readValue(data);
+            this.model.setGoals((ArrayList<Goal>) goals);
+        } catch (JsonParseException e) {
             e.printStackTrace();
-        } 
-        catch (JsonMappingException e) {
+        } catch (JsonMappingException e) {
             e.printStackTrace();
-        } 
-        catch (URISyntaxException e){
-            e.printStackTrace();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -116,11 +114,13 @@ public class App extends Application {
         minimize.setAlignment(Pos.CENTER);
         minimize.setTextAlignment(TextAlignment.CENTER);
         minimize.setTooltip(new Tooltip("Minimize"));
+        /*
         Button importGoal = new Button("v");
         importGoal.setPrefSize(15, 15);
         importGoal.setAlignment(Pos.CENTER);
         importGoal.setTextAlignment(TextAlignment.CENTER);
         importGoal.setTooltip(new Tooltip("Import"));
+        */
         Button goalieHelp = new Button("?");
         goalieHelp.setPrefSize(15, 15);
         goalieHelp.setAlignment(Pos.CENTER);
@@ -136,14 +136,14 @@ public class App extends Application {
         menuTitle.setAlignment(Pos.CENTER);
         menuTitle.setTextAlignment(TextAlignment.CENTER);
         Region menuSpacer = new Region();
-        menuSpacer.setPrefSize(760, 15);
-        HBox menuBar = new HBox(0, menuTitle, menuSpacer, setting, goalieHelp, importGoal, minimize, appExit);
+        menuSpacer.setPrefSize(775, 15);
+        HBox menuBar = new HBox(0, menuTitle, menuSpacer, setting, goalieHelp, minimize, appExit);
         menuBar.setPrefSize(900, 15);
         menuBar.setAlignment(Pos.CENTER);
 
         appExit.getStyleClass().add("menuBarButton");
         minimize.getStyleClass().add("menuBarButton");
-        importGoal.getStyleClass().add("menuBarButton");
+        //importGoal.getStyleClass().add("menuBarButton");
         goalieHelp.getStyleClass().add("menuBarButton");
         setting.getStyleClass().add("menuBarButton");
         menuTitle.setId("menuTitle");
@@ -270,6 +270,7 @@ public class App extends Application {
             }
         });
 
+        /*
         // TODO Import Goals
         importGoal.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -279,6 +280,7 @@ public class App extends Application {
                 System.out.println("Not implemented yet");
             }
         });
+        */
 
         // Help Page
         goalieHelp.setOnAction(new EventHandler<ActionEvent>(){
@@ -374,23 +376,23 @@ public class App extends Application {
     }
 
     @Override
-    public void stop(){
+    public void stop() throws URISyntaxException {
 
-        //Save data
+        // Save data
         try {
             FileWriter saveState = new FileWriter(this.state, false);
             saveState.write(this.model.getState());
             saveState.close();
             ObjectMapper mapper = new ObjectMapper();
             String jsonData = mapper.writeValueAsString(this.model.getGoals());
-            URL dataPath = new URL(getClass().getResource("/data/data.json").toExternalForm());
-            File data = new File(dataPath.toURI());
+            // URL dataPath = new
+            // URL(getClass().getResource("/data/data.json").toExternalForm());
+            // File data = new File(dataPath.toURI());
+            File data = new File("data/data.json");
             FileWriter saveData = new FileWriter(data, false);
             saveData.write(jsonData);
             saveData.close();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         System.exit(0);
