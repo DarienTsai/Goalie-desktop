@@ -1,0 +1,293 @@
+/*Light theme*/
+
+/*
+Things taken care of with css:
+- font
+- font size
+- borders
+- backgrounds
+- fills
+- scroll bar
+*/
+
+/* General styles ------------------------------------- */
+*{
+  -fx-background-radius: 0px;
+  -fx-focus-color: transparent;
+  -fx-background-insets: 0, 0, 0;
+  -fx-highlight-fill: #498f49;
+}
+
+.tooltip{
+  -fx-font-size: 10px;
+}
+
+.scroll-bar{
+  -fx-border-color: transparent;
+  -fx-background-insets: 0, 0, 0;
+  -fx-background-radius: 0px;
+}
+
+.track{
+  -fx-pref-width: 7px;
+  -fx-pref-height: 7px;
+  -background-radius: 0px;
+  -fx-background-color: transparent;
+}
+
+.thumb{
+  -fx-pref-width: 7px;
+  -fx-pref-height: 7px;
+  -fx-border-width: 0px;
+  -fx-background-radius: 0px;
+  -fx-background-color: #afafaf;
+  -fx-background-insets: 0, 0, 0;
+}
+
+.thumb:hover, .thumb:pressed{
+  -fx-background-color: #818181;
+}
+
+.increment-button, .decrement-button, .increment-arrow, .decrement-arrow{
+  -fx-pref-width: 7px;
+  -fx-pref-height: 7px;
+  -fx-padding: 0px;
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+}
+
+/* Main App Colors ------------------------------------ */
+/* -------------------------------------------- menuBar */
+#menuBar{
+  -fx-background-color: #57ca57;
+}
+
+#menuTitle{
+  -fx-font-size: 12px;
+  -fx-font-family: 'Georgia';
+}
+
+.menuBarButton{
+  -fx-background-color: #57ca57;
+}
+
+.menuBarButton:hover{
+  -fx-background-color: #008000;
+  -fx-text-fill: #f3f3f3;
+}
+
+.menuBarButton:pressed{
+  -fx-background-color: #005a00;
+}
+
+/* ----------------------------------------selectionBar */
+#selectionBar{
+  -fx-background-color: #ececec;
+}
+
+#savedGoals{
+  -fx-background-color: #e2e2e2;
+}
+
+#savedGoalsContainer{
+  -fx-background-color: #e2e2e2;
+}
+
+#savedGoalsContainer .viewport{
+  -fx-background-color: #e2e2e2;
+}
+
+#newGoal{
+  -fx-background-radius: 50px;
+  -fx-background-color: #57ca57;
+  -fx-font-size: 20px;
+}
+
+#newGoal:hover{
+  -fx-background-color: #6cd16c;
+}
+
+#newGoal:pressed{
+  -fx-background-color: #3fa83f;
+}
+
+.goalFace{
+  -fx-font-size: 23px;
+}
+
+.goalTitle{
+  -fx-font-size: 12px;
+  -fx-text-overrun: ellipsis;
+}
+
+.goalCompletion{
+  -fx-font-size: 9px;
+  -fx-font-color: #202020;
+}
+
+.selection{
+  -fx-background-color: #e0e0e0;
+  -fx-border-width: 2px;
+  -fx-border-color: #949494;
+  -fx-border-radius: 18px;
+  -fx-background-radius: 18px;
+}
+
+.selection:hover{
+  -fx-background-color: #d6d6d6;
+  -fx-border-color: #448648;
+  -fx-translate-y: -3px;
+}
+
+.selection:pressed{
+  -fx-background-color: #c0c0c0;
+}
+
+#deleteContainer{
+  -fx-background-color: #ebebeb;
+  -fx-border-width: 2px;
+  -fx-border-color: #b4b4b4;
+}
+
+#deleteContainer:hover{
+  -fx-border-color: #87aa8b;
+}
+
+#deleteDialogue{
+  -fx-font-size: 20px;
+}
+
+.deleteButton{
+  -fx-font-size: 15px;
+  -fx-background-color: #ebebeb;
+}
+
+.deleteButton:hover{
+  -fx-background-color: #dbdbdb;
+}
+
+.deleteButton:pressed{
+  -fx-background-color: #c2c2c2;
+}
+
+/* ---------------------------------------- progressBar */
+#progressBar{
+  -fx-background-color: #ececec;
+}
+
+#checksContainer{
+  -fx-background-color: transparent;
+}
+
+#checks{
+  -fx-background-color: #ececec;
+}
+
+#checkList{
+  -fx-background-color: transparent;
+}
+
+#goalTitle{
+  -fx-control-inner-background: #ececec;
+  -fx-border-color: #dfdfdf;
+  -fx-background-color: transparent;
+  -fx-font-family: 'Georgia';
+  -fx-font-size: 15px;
+  -fx-border-width: 0 0 2px;
+}
+
+#newTask{
+  -fx-background-color: #cfcfcf;
+  -fx-font-size: 12px;
+}
+
+#newTask:hover{
+  -fx-background-color: #dfdfdf;
+}
+
+#newTask:pressed{
+  -fx-background-color: #aaaaaa;
+}
+
+#goalTitle:focused{
+  -fx-border-color: #acacac;
+}
+
+#notes{
+  -fx-background-color: transparent;
+  -fx-font-color: black;
+  -fx-font-family: 'Georgia';
+  -fx-font-size: 20px;
+}
+
+.task{
+  -fx-background-color: #dddddd;
+  -fx-border-width: 0 0 0 5px;
+  -fx-border-color: #9b9b9b;
+}
+
+.task:hover{
+  -fx-background-color: #d4d4d4;
+  -fx-border-color: #53855c;
+}
+
+.removeTask{
+  -fx-font-size: 15px;
+  -fx-background-color: transparent;
+}
+
+.removeTask:hover, .check:hover{
+  -fx-background-color: #c9c9c9;
+}
+
+.removeTask:pressed{
+  -fx-background-color: #e06e6e;
+}
+
+.check:pressed{
+  -fx-background-color: #bebebe;
+}
+
+.check{
+  -fx-background-color: transparent;
+  -fx-padding: 7px;
+}
+
+.box{
+  -fx-background-color: transparent;
+  -fx-border-radius: 20px;
+  -fx-border-width: 1px;
+  -fx-border-color: #808080;
+}
+
+.taskDescription{
+  -fx-background-color: transparent;
+  -fx-control-inner-background: transparent;
+  -fx-text-fill: black;
+  -fx-font-family: "Georgia";
+}
+
+/* Settings Colors ------------------------------------ */
+
+#settings{
+  -fx-background-color: #f0f0f0;
+}
+
+.setButton{
+  -fx-border: none;
+  -fx-background-radius: none;
+  -fx-background-color: #f0f0f0;
+}
+
+.setButton:hover{
+  -fx-background-color: #e0e0e0;
+}
+
+.setButton:pressed{
+  -fx-background-color: #dadada;
+}
+
+#disclaim{
+  -fx-font-size: 10px;
+  -fx-font-color: #3a3a3a;
+}

@@ -51,6 +51,7 @@
   width: 19px;
   height: 19px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .owo-switch-off{
