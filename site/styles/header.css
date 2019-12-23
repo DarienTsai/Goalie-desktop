@@ -1,0 +1,66 @@
+/*Styles for header*/
+nav{
+  height: 2vh;
+}
+
+header{
+  width: 100vw;
+  height: 95vh;
+  background-color: rgb(155, 221, 155);
+  padding: 0.5% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+#header-text{
+  padding: 5% 0;
+}
+
+#header-header{
+  font-size:5vw;
+}
+
+#header-download{
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(13, 114, 13); 
+  padding: 1.7%;
+  border-radius: 7px;
+  text-align: center;
+}
+
+#header-download:hover{
+  background-color: rgb(18, 131, 18); 
+}
+
+#header-download:active{
+  background-color: rgb(13, 99, 13); 
+}
+
+#header-download-heading{
+  font-size: 1.6em;
+  padding: 0.3% 0.3%;
+}
+
+#header-download-sub{
+  font-size: 1em;
+}
+
+#header-graphic{ 
+  width: 50%;
+  height: 100%;
+  background-image: url("../assets/siteHeader.png"); 
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}

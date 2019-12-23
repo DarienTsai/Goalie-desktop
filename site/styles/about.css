@@ -1,0 +1,53 @@
+/*Styles for about section*/
+
+#about{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#about-kaomoji{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7vw;
+  width: 50%;
+  height: 100%;
+}
+
+#about-info{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;;
+}
+
+#about-title{
+  font-size: 3vw;
+}
+
+#about-comments{
+  width: 80%;
+  height: 60%;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#about-comment-one{
+  text-align: left;
+  width: 70%;
+  transform: rotate(-22.5deg);
+}
+
+#about-comment-two{
+  text-align: right;
+  width: 70%;
+  transform: rotate(22.5deg);
+}

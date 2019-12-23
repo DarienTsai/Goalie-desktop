@@ -1,0 +1,85 @@
+/*Styles for the owo filer*/
+
+#owo{
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #56cc56;
+  padding: 0.3% 0;
+  overflow: visible;
+}
+
+#owo-module{
+  width: fit-content;
+  padding: 0 2%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: visible;
+}
+
+#owo-text{
+  width: fit-content;
+  white-space: nowrap;
+  padding: 0 15px;
+}
+
+#owo-track{
+  width: 28px;
+  height: 15px;
+  border-radius: 10px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.owo-track-off{
+  background-color: #503333;
+  justify-content: flex-start;
+}
+
+.owo-track-on{
+  background-color: #4f884f;
+  justify-content: flex-end;
+}
+
+#owo-switch{
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+}
+
+.owo-switch-off{
+  background-color: #a83f3f;
+}
+
+.owo-switch-on{
+  background-color: #39c939;
+}
+
+#owo-switch::after{
+  content: attr(name);
+  width: fit-content;
+  height: fit-content;
+  border-radius: 7px;
+  color: white;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.705);
+  padding: 0.5em;
+  bottom: 0em;
+  right: 5em;
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+#owo-switch:hover::after{
+  bottom: -2em;
+  opacity: 1;
+}
